@@ -1,0 +1,14 @@
+## EJEMPLO DIAGRAMA DE PARETO ##
+
+#La ley de Pareto es un principio que establece que el 20% del esfuerzo destinado a
+#una tarea genera un 80% de los resultados. Esto es aplicable a distintas áreas
+#como la actividad empresarial o el ámbito personal#
+
+library(qcc)
+x <- table(Prueba$Zona)
+pareto.chart(x) #cuando no tenemos frecuencias
+
+library(qcc) #BD_Metodo abc
+y <- Pareto$`Acumlado en Euros` #cuando tenemos frecuencias
+names(y) <- Pareto$`Nombre del producto`
+pareto.chart(y, col=rainbow(13))
